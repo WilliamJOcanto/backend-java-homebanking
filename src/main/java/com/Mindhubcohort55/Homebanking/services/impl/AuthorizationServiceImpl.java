@@ -128,6 +128,9 @@ public class AuthorizationServiceImpl  implements AuthorizationService {
         if(password.length() < 8){
             return new ResponseEntity<>("The password should not be less than 8 characters", HttpStatus.BAD_REQUEST);
         }
+        if(!email.contains(".com")){
+            return new ResponseEntity<>("You must enter a valid email", HttpStatus.BAD_REQUEST);
+        }
         if(isClientExists(email)){
             return new ResponseEntity<>("The Email entered is already registered", HttpStatus.FORBIDDEN);
         }
@@ -150,6 +153,6 @@ public class AuthorizationServiceImpl  implements AuthorizationService {
         saveNewClient(newClient);
         accountService.saveAccountRepository(defaultAccount);
 
-        return new ResponseEntity<>("Client created", HttpStatus.CREATED);
+        return new ResponseEntity<>("Client created, please log in", HttpStatus.CREATED);
     }
 }

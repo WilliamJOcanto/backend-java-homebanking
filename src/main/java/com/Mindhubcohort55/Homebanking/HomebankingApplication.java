@@ -98,7 +98,7 @@ public class HomebankingApplication {
 		transactionRepository.save(settlement);
 
 
-		Loan mortgage = new Loan("Mortgage", 500000.00, Arrays.asList(12, 24, 36, 48, 60, 72));
+		Loan mortgage = new Loan("Mortgage", 500000.00, Arrays.asList(12, 24, 36, 48, 60));
 		Loan personal = new Loan("Personal", 100000.00,  Arrays.asList(6,12,24));
 		Loan automotive = new Loan("Automotive", 300000.00 , Arrays.asList(6,12,24,36));
 		loanRepository.save(mortgage);
