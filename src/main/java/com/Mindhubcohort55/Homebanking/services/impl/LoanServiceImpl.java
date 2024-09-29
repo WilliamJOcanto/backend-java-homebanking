@@ -128,7 +128,7 @@ public class LoanServiceImpl implements LoanService {
             }
         }
         if(loanAccountFieldValidator(applyLoanDto)){
-            return new ResponseEntity<>("The source account field must not be empty", HttpStatus.FORBIDDEN);
+            return new ResponseEntity<>("The account field must not be empty", HttpStatus.FORBIDDEN);
         }
         if(amountFieldValidator(applyLoanDto)){
             return new ResponseEntity<>("Enter a valid amount greater than zero", HttpStatus.FORBIDDEN);

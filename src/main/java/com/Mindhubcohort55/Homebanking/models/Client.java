@@ -38,6 +38,21 @@ public class Client {
         this.password = password;
     }
 
+    public Client(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    public Client(long id, String email) {
+        this.id = id;
+        this.email = email;
+    }
+
+    public Client(String email, long id) {
+        this.id = id;
+        this.email = email;
+    }
+
     public String getFirstName() {
         return firstName;
     }
